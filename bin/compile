@@ -49,7 +49,7 @@ echo "hello shinji1";
 echo "hello shinji2";
     if [ $? == 0 ]; then
       echo "=====> Detected Framework: $framework"
-      echo $dir/bin/compile $1 $2 $3
+      echo "$dir/bin/compile $1 $2 $3"
 
       if [ $? != 0 ]; then
         exit 1
