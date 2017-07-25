@@ -31,10 +31,10 @@ for BUILDPACK in $(grep -v ^# $1/.buildpacks); do
       curl -s "$url" | tar xvz -C "$dir" >/dev/null 2>&1
     else
       git clone $url $dir >/dev/null 2>&1
-      #if [ -f "$dir/.gitmodules" ]; then
-        #echo "=====> Detected git submodules. Initializing..."
-        #(cd $dir && git submodule update --init --recursive)
-      #fi
+      if [ -f "$dir/.gitmodules" ]; then
+        echo "=====> Detected git submodules. Initializing..."
+        (cd $dir && git submodule update --init --recursive)
+      fi
     fi
     cd $dir
 
@@ -43,7 +43,7 @@ for BUILDPACK in $(grep -v ^# $1/.buildpacks); do
     fi
 echo "hello shinji1";
     # we'll get errors later if these are needed and don't exist
-    #chmod -f +x $dir/bin/{detect,compile,release} || true
+    chmod -f +x $dir/bin/{detect,compile,release} || true
 
     #framework=$($dir/bin/detect $1)
 echo "hello shinji2";
