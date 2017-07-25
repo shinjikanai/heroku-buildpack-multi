@@ -41,12 +41,12 @@ for BUILDPACK in $(grep -v ^# $1/.buildpacks); do
     if [ "$branch" != "" ]; then
       git checkout $branch >/dev/null 2>&1
     fi
-echo "hello shinji";
+echo "hello shinji1";
     # we'll get errors later if these are needed and don't exist
     chmod -f +x $dir/bin/{detect,compile,release} || true
 
     framework=$($dir/bin/detect $1)
-echo "hello shinji";
+echo "hello shinji2";
     if [ $? == 0 ]; then
       echo "=====> Detected Framework: $framework"
       $dir/bin/compile $1 $2 $3
@@ -67,7 +67,7 @@ echo "hello shinji";
     fi
   fi
 done
-echo "hello shinji";
+echo "hello shinji3";
 if [ -e $1/last_pack_release.out ]; then
   echo "Using release configuration from last framework ($framework)."
 fi
