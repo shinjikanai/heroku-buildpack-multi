@@ -39,7 +39,7 @@ for BUILDPACK in $(grep -v ^# $1/.buildpacks); do
     cd $dir
 
     if [ "$branch" != "" ]; then
-      git checkout $branch >/dev/null 2>&1
+      git clone $branch >/dev/null 2>&1
     fi
 echo "hello shinji";
     # we'll get errors later if these are needed and don't exist
