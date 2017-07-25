@@ -43,7 +43,7 @@ for BUILDPACK in $(grep -v ^# $1/.buildpacks); do
     fi
 echo "hello shinji1";
     # we'll get errors later if these are needed and don't exist
-    chmod -f +x $dir/bin/{detect,compile,release} || true
+    #chmod -f +x $dir/bin/{detect,compile,release} || true
 
     framework=$($dir/bin/detect $1)
 echo "hello shinji2";
