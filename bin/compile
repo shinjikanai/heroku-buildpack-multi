@@ -13,6 +13,8 @@ function indent() {
   esac
 }
 
+print "hello";;
+
 unset GIT_DIR
 
 for BUILDPACK in $(cat $1/.buildpacks); do
